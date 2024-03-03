@@ -1,0 +1,135 @@
+
+<html>
+<head>
+    <title>College Addmission Portal</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        form {
+            border: 2px solid black;
+            margin-top: 30px;
+            margin-bottom: 200px;
+            margin-right: 150px;
+            margin-left: 150px;
+            background-color: lightblue;
+            padding: 20px 30px 40px 80px;
+        }
+
+        p {
+            border: 1px solid black;
+            border-radius: 6px;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        h1 {
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 8px;
+            margin-right: 300px;
+            margin-left: 300px;
+            background-color: red;
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+        #logo{
+            margin-bottom: 0%;
+         text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color:white;">
+
+   
+<h1 align="center">Glorious Academy Chitwan</h1>
+
+<h2 align="center">Admission Application Form</h2>
+
+
+<form id="validForm">
+    <p>Applicant's Personal Details</p>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" required placeholder="Enter Your First Name"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" required placeholder="Enter Your Last Name" ><br><br>
+    <label for="birthdate">Date of Birth:</label>
+    <input type="date" id="birthdate" name="birthdate" required placeholder="Enter Your Date of Birth" ><br><br>
+    <label for="phnumber">Phone Number:</label>
+    <input type="number" id="phnumber" name="phnumber"  required placeholder="Enter Your Phone Number" ><br><br>
+
+    <p align="left">Current Address</p>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required placeholder="Enter Your City" ><br><br>
+    <label for="province">Province:</label>
+    <input type="text" id="province" name="province" required placeholder="Enter Your Province" ><br><br>
+    <label for="pcode">Province Code:</label>
+    <select name="pcode" id="pcode">
+        <option value="np-p3">NP-P3</option>
+        <option value="np-p4">NP-P4</option>
+        <option value="np-p6">NP-P6</option>
+        <option value="np-p1">NP-P1</option>
+        <option value="np-p5">NP-P5</option>
+        <option value="np-p2">NP-P2</option>
+        <option value="np-p7">NP-P7</option>
+    </select>
+    <p>Academic Detail</p>
+
+    SLC(Grade 12)/Equivalent Degree<br><br>
+    <label for="preschool">Name of School:</label>
+    <input type="text" id="preschool" name="preschool" required placeholder="Enter Your School Name" ><br><br>
+    <label for="score">Score(in GPA):</label>
+    <input type="number" id="score" name="score" required placeholder="Score" ><br><br>
+    <label for="course">Choose a Course:</label>
+    <select name="course" id="course">
+        <option value="bsc">BSC</option>
+        <option value="bscit">BSCIT</option>
+        <option value="mbbs">MBBS</option>
+        <option value="bitech">BITECT</option>
+    </select><br><br><br>
+    <input type="button" value="Submit" onclick="displayData();">
+</form>
+
+<table id="myTable">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Phone Number</th>
+        <th>City</th>
+        <th>Province</th>
+        <th>School</th>
+        <th>Score</th>
+    </tr>
+</table>
+
+<script>
+    function displayData() {
+        var form = document.getElementById("validForm");
+        var table = document.getElementById("myTable");
+        var newRow = table.insertRow();
+
+        var cells = [];
+        for (var i = 0; i < 8; i++) {
+            cells[i] = newRow.insertCell(i);
+        }
+
+        cells[0].innerHTML = form.elements["fname"].value;
+        cells[1].innerHTML = form.elements["lname"].value;
+        cells[2].innerHTML = form.elements["birthdate"].value;
+        cells[3].innerHTML = form.elements["phnumber"].value;
+        cells[4].innerHTML = form.elements["city"].value;
+        cells[5].innerHTML = form.elements["province"].value;
+        cells[6].innerHTML = form.elements["preschool"].value;
+        cells[7].innerHTML = form.elements["score"].value;
+    }
+</script>
+
+</body>
+</html>
